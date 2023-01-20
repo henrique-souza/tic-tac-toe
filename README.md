@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Deploy feito usando [Github pages](https://github.com/gitname/react-gh-pages)
+Deploy feito usando [Github pages](https://github.com/gitname/react-gh-pages): https://henrique-souza.github.io/tic-tac-toe/
 
 ## Available Scripts
 
