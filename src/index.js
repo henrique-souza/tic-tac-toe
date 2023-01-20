@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// Parei em Monstrando as jogadas anteriores: https://pt-br.reactjs.org/tutorial/tutorial.html#showing-the-past-moves
-
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -83,6 +81,18 @@ class Game extends React.Component {
     const history = this.state.history;
     const current = history[history.length - 1];
     const winner = calculateWinner(current.squares);
+
+    const moves = history.map((step, move) => {
+      const desc = move ? "Go to move #" + move : "Go to game start";
+      return (
+        <p>
+          <li>
+            <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          </li>
+        </p>
+      );
+    });
+
     let status;
 
     if (winner) {
@@ -101,7 +111,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{/* TODO */}</ol>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
